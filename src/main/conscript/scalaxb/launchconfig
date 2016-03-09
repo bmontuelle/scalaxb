@@ -1,5 +1,5 @@
 [app]
-  version: 1.4.0
+  version: 1.4.1-SNAPSHOT
   org: org.scalaxb
   name: scalaxb_2.11
   class: scalaxb.compiler.SbtApp
@@ -7,5 +7,6 @@
 [scala]
   version: 2.11.7
 [repositories]
+  local
   sonatype-public: https://oss.sonatype.org/content/repositories/public/
   maven-central
