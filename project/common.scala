@@ -74,11 +74,10 @@ object Common {
     resolvers ++= Seq(
       "sonatype-public" at "https://oss.sonatype.org/content/repositories/public"),
     publishTo <<= version { (v: String) =>
-      val nexus = "https://oss.sonatype.org/"
-      if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots") 
-      else Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+      val nexus = "http://repo.april-waf.local/nexus/"
+      if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots/")
+      else Some("releases"  at nexus + "content/repositories/releases/")
     },
-    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
     publishMavenStyle := true,
     pomIncludeRepository := { x => false }
   )
